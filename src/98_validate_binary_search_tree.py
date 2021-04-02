@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 
-#recursion
+# recursion
 class Solution:
     def isValidBST(self, root, floor=float('-inf'), ceiling=float('inf')):
         if not root:
