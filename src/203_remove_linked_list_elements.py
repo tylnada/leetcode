@@ -6,13 +6,13 @@ class Solution:
         :rtype: ListNode
         """
         
-        dummy_head = ListNode(0)
-        dummy_head.next = head
+        dummy = ListNode(0)
+        dummy.next = head
         
-        current_node = dummy_head     
-        while current_node.next != None:
-            if current_node.next.val == val:
-                current_node.next = current_node.next.next
+        cur = dummy     
+        while cur.next:
+            if cur.next.val == val:
+                cur.next = cur.next.next
             else:
-                current_node = current_node.next
-        return dummy_head.next
+                cur = cur.next
+        return dummy.next
