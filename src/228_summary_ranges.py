@@ -33,3 +33,15 @@ class Solution:
                 ranges.append(r)
             r[1:] = [n]
         return ['->'.join(map(str, r)) for r in ranges]
+    
+    
+#fastest
+class Solution:
+    def summaryRanges(self, nums):
+        ranges, r = [], []
+        for n in nums:
+            if n-1 not in r:
+                r = []
+                ranges += r, # equivalent to [r] or (r)
+            r[1:] = n, # equivalent to [n]
+        return ['->'.join(map(str, r)) for r in ranges]
